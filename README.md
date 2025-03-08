@@ -87,56 +87,6 @@ bind(element, state, {
 });
 ```
 
-### Array Operations
-
-```javascript
-const todos = resin([
-    { id: 1, text: 'Learn Resin', done: false },
-    { id: 2, text: 'Build app', done: true }
-]);
-
-// Reactive filtering
-const activeTodos = todos.rFilter(todo => !todo.done);
-
-// Reactive mapping
-const todoTexts = todos.rMap(todo => todo.text);
-
-// Reactive find
-const firstActive = todos.rFind(todo => !todo.done);
-
-// Sorted view
-const sortedTodos = todos.rSort((a, b) => a.id - b.id);
-
-// Sliced view
-const firstThreeTodos = todos.rSlice(0, 3);
-
-// Regular array operations work too
-todos.value.push({ id: 3, text: 'New todo', done: false });
-```
-
-### Map Operations
-
-```javascript
-const users = resin(new Map([
-    ['user1', { name: 'John', age: 30 }]
-]));
-
-// Reactive get
-const user1 = users.rGet('user1');
-
-// Reactive entries
-const entries = users.rEntries();
-
-// Reactive keys
-const userIds = users.rKeys();
-
-// Reactive values
-const userObjects = users.rValues();
-
-// Regular Map operations work
-users.value.set('user2', { name: 'Jane', age: 25 });
-```
-
 ### Computed Values
 
 ```javascript
@@ -287,6 +237,58 @@ import { enableDebug } from '@resin-js/core';
 
 // Enable debug mode for detailed logs
 enableDebug();
+```
+
+## Experiemental (May not be fully functional, subject to change as I continue to develop)
+
+### Array Operations (EXPERIMENTAL)
+
+```javascript
+const todos = resin([
+    { id: 1, text: 'Learn Resin', done: false },
+    { id: 2, text: 'Build app', done: true }
+]);
+
+// Reactive filtering
+const activeTodos = todos.rFilter(todo => !todo.done);
+
+// Reactive mapping
+const todoTexts = todos.rMap(todo => todo.text);
+
+// Reactive find
+const firstActive = todos.rFind(todo => !todo.done);
+
+// Sorted view
+const sortedTodos = todos.rSort((a, b) => a.id - b.id);
+
+// Sliced view
+const firstThreeTodos = todos.rSlice(0, 3);
+
+// Regular array operations work too
+todos.value.push({ id: 3, text: 'New todo', done: false });
+```
+
+### Map Operations (EXPERIMENTAL)
+
+```javascript
+const users = resin(new Map([
+    ['user1', { name: 'John', age: 30 }]
+]));
+
+// Reactive get
+const user1 = users.rGet('user1');
+
+// Reactive entries
+const entries = users.rEntries();
+
+// Reactive keys
+const userIds = users.rKeys();
+
+// Reactive values
+const userObjects = users.rValues();
+
+// Regular Map operations work
+users.value.set('user2', { name: 'Jane', age: 25 });
 ```
 
 ## Use Cases
