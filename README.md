@@ -1,6 +1,6 @@
 # Resin.js
 
-A lightweight reactive library for enhancing native web development. Resin provides reactivity, and aims to remove common pain points found in vanilla JavaScript web development.
+A lightweight reactive library for enhancing native web development.
 
 4.6kb minified, 1.9kb gzipped with zero dependencies.
 
